@@ -1,0 +1,23 @@
+<h1>Show Volunteer</h1>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @volunteer.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @volunteer.last_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @volunteer.email %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.volunteer_path(@conn, :edit, @volunteer) %></span>
+<span><%= link "Back", to: Routes.volunteer_path(@conn, :index) %></span>

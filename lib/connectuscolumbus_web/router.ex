@@ -17,6 +17,8 @@ defmodule ConnectuscolumbusWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    resources "/volunteers", VolunteerController
   end
 
   # Other scopes may use custom stacks.
