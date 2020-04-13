@@ -1,4 +1,5 @@
-# Connectuscolumbus
+# ConnectUS ColumbUS
+![](https://github.com/reconcoys/connectuscolumbus/workflows/CI/badge.svg)
 
 To start your Phoenix server:
 
