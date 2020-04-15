@@ -2,6 +2,7 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
   use ConnectuscolumbusWeb.ConnCase
 
   alias Connectuscolumbus.Accounts
+  alias Connectuscolumbus.Users.User
 
   @create_attrs %{email: "some email", first_name: "some first_name", last_name: "some last_name"}
   @update_attrs %{
@@ -14,6 +15,13 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
   def fixture(:volunteer) do
     {:ok, volunteer} = Accounts.create_volunteer(@create_attrs)
     volunteer
+  end
+
+  setup %{conn: conn} do
+    user = %User{email: "test@example.com"}
+    conn = Pow.Plug.assign_current_user(conn, user, otp_app: :Connectuscolumbus)
+
+    {:ok, conn: conn}
   end
 
   describe "index" do
@@ -32,10 +40,10 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
 
   describe "create volunteer" do
     test "redirects to show when data is valid", %{conn: conn} do
-      conn = post(conn, Routes.volunteer_path(conn, :create), volunteer: @create_attrs)
+      create_conn = post(conn, Routes.volunteer_path(conn, :create), volunteer: @create_attrs)
 
-      assert %{id: id} = redirected_params(conn)
-      assert redirected_to(conn) == Routes.volunteer_path(conn, :show, id)
+      assert %{id: id} = redirected_params(create_conn)
+      assert redirected_to(create_conn) == Routes.volunteer_path(create_conn, :show, id)
 
       conn = get(conn, Routes.volunteer_path(conn, :show, id))
       assert html_response(conn, 200) =~ "Show Volunteer"
@@ -60,8 +68,10 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
     setup [:create_volunteer]
 
     test "redirects when data is valid", %{conn: conn, volunteer: volunteer} do
-      conn = put(conn, Routes.volunteer_path(conn, :update, volunteer), volunteer: @update_attrs)
-      assert redirected_to(conn) == Routes.volunteer_path(conn, :show, volunteer)
+      updated_conn =
+        put(conn, Routes.volunteer_path(conn, :update, volunteer), volunteer: @update_attrs)
+
+      assert redirected_to(updated_conn) == Routes.volunteer_path(updated_conn, :show, volunteer)
 
       conn = get(conn, Routes.volunteer_path(conn, :show, volunteer))
       assert html_response(conn, 200) =~ "some updated email"
@@ -77,8 +87,8 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
     setup [:create_volunteer]
 
     test "deletes chosen volunteer", %{conn: conn, volunteer: volunteer} do
-      conn = delete(conn, Routes.volunteer_path(conn, :delete, volunteer))
-      assert redirected_to(conn) == Routes.volunteer_path(conn, :index)
+      delete_conn = delete(conn, Routes.volunteer_path(conn, :delete, volunteer))
+      assert redirected_to(delete_conn) == Routes.volunteer_path(delete_conn, :index)
 
       assert_error_sent(404, fn ->
         get(conn, Routes.volunteer_path(conn, :show, volunteer))

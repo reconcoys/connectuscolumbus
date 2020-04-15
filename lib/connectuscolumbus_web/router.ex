@@ -31,6 +31,10 @@ defmodule ConnectuscolumbusWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
+  end
+
+  scope "/", ConnectuscolumbusWeb do
+    pipe_through([:browser, :protected])
 
     resources("/volunteers", VolunteerController)
   end
