@@ -14,6 +14,8 @@ defmodule ConnectuscolumbusWeb.Router do
     plug(:accepts, ["json"])
   end
 
+  # we can pipe any routes through :protected in the future
+  # to prevent those that aren't logged in from seeing
   pipeline :protected do
     plug(Pow.Plug.RequireAuthenticated,
       error_handler: Pow.Phoenix.PlugErrorHandler
@@ -26,7 +28,7 @@ defmodule ConnectuscolumbusWeb.Router do
   end
 
   scope "/", ConnectuscolumbusWeb do
-    pipe_through([:browser, :protected])
+    pipe_through(:browser)
 
     get("/", PageController, :index)
 

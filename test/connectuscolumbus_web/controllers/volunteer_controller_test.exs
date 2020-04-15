@@ -4,7 +4,11 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
   alias Connectuscolumbus.Accounts
 
   @create_attrs %{email: "some email", first_name: "some first_name", last_name: "some last_name"}
-  @update_attrs %{email: "some updated email", first_name: "some updated first_name", last_name: "some updated last_name"}
+  @update_attrs %{
+    email: "some updated email",
+    first_name: "some updated first_name",
+    last_name: "some updated last_name"
+  }
   @invalid_attrs %{email: nil, first_name: nil, last_name: nil}
 
   def fixture(:volunteer) do
@@ -75,9 +79,10 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
     test "deletes chosen volunteer", %{conn: conn, volunteer: volunteer} do
       conn = delete(conn, Routes.volunteer_path(conn, :delete, volunteer))
       assert redirected_to(conn) == Routes.volunteer_path(conn, :index)
-      assert_error_sent 404, fn ->
+
+      assert_error_sent(404, fn ->
         get(conn, Routes.volunteer_path(conn, :show, volunteer))
-      end
+      end)
     end
   end
 

@@ -26,10 +26,6 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :connectuscolumbus, ExOauth2Provider,
-  repo: Connectuscolumbus.Repo,
-  resource_owner: Connectuscolumbus.Users.User
-
 config :connectuscolumbus, :pow,
   user: Connectuscolumbus.Users.User,
   repo: Connectuscolumbus.Repo
