@@ -18,6 +18,11 @@
   </li>
 
   <li>
+    <strong>Phone Number:</strong>
+    <%= @story_teller.phone_number %>
+  </li>
+
+  <li>
     <strong>Comments:</strong>
     <%= @story_teller.comments %>
   </li>

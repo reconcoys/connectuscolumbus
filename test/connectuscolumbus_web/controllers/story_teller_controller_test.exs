@@ -8,15 +8,23 @@ defmodule ConnectuscolumbusWeb.StoryTellerControllerTest do
     comments: "some comments",
     email: "some email",
     first_name: "some first_name",
-    last_name: "some last_name"
+    last_name: "some last_name",
+    phone_number: 555_555_5555
   }
   @update_attrs %{
     comments: "some updated comments",
     email: "some updated email",
     first_name: "some updated first_name",
-    last_name: "some updated last_name"
+    last_name: "some updated last_name",
+    phone_number: 555_555_5555
   }
-  @invalid_attrs %{comments: nil, email: nil, first_name: nil, last_name: nil}
+  @invalid_attrs %{
+    comments: nil,
+    email: nil,
+    first_name: nil,
+    last_name: nil,
+    phone_number: 555_555_5555
+  }
 
   def fixture(:story_teller) do
     {:ok, story_teller} = Stories.create_story_teller(@create_attrs)

@@ -15,7 +15,7 @@ defmodule Connectuscolumbus.Stories.StoryTeller do
   @doc false
   def changeset(story_teller, attrs) do
     story_teller
-    |> cast(attrs, [:email, :first_name, :last_name, :comments])
-    |> validate_required([:email, :first_name, :last_name, :comments])
+    |> cast(attrs, [:email, :first_name, :last_name, :comments, :phone_number])
+    |> validate_required([:email, :first_name, :last_name, :comments, :phone_number])
   end
 end

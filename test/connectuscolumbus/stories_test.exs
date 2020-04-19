@@ -6,9 +6,27 @@ defmodule Connectuscolumbus.StoriesTest do
   describe "story_tellers" do
     alias Connectuscolumbus.Stories.StoryTeller
 
-    @valid_attrs %{comments: "some comments", email: "some email", first_name: "some first_name", last_name: "some last_name"}
-    @update_attrs %{comments: "some updated comments", email: "some updated email", first_name: "some updated first_name", last_name: "some updated last_name"}
-    @invalid_attrs %{comments: nil, email: nil, first_name: nil, last_name: nil}
+    @valid_attrs %{
+      comments: "some comments",
+      email: "some email",
+      first_name: "some first_name",
+      last_name: "some last_name",
+      phone_number: 555_555_5555
+    }
+    @update_attrs %{
+      comments: "some updated comments",
+      email: "some updated email",
+      first_name: "some updated first_name",
+      last_name: "some updated last_name",
+      phone_number: 555_555_5555
+    }
+    @invalid_attrs %{
+      comments: nil,
+      email: nil,
+      first_name: nil,
+      last_name: nil,
+      phone_number: 555_555_5555
+    }
 
     def story_teller_fixture(attrs \\ %{}) do
       {:ok, story_teller} =
@@ -43,7 +61,10 @@ defmodule Connectuscolumbus.StoriesTest do
 
     test "update_story_teller/2 with valid data updates the story_teller" do
       story_teller = story_teller_fixture()
-      assert {:ok, %StoryTeller{} = story_teller} = Stories.update_story_teller(story_teller, @update_attrs)
+
+      assert {:ok, %StoryTeller{} = story_teller} =
+               Stories.update_story_teller(story_teller, @update_attrs)
+
       assert story_teller.comments == "some updated comments"
       assert story_teller.email == "some updated email"
       assert story_teller.first_name == "some updated first_name"
@@ -52,7 +73,10 @@ defmodule Connectuscolumbus.StoriesTest do
 
     test "update_story_teller/2 with invalid data returns error changeset" do
       story_teller = story_teller_fixture()
-      assert {:error, %Ecto.Changeset{}} = Stories.update_story_teller(story_teller, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Stories.update_story_teller(story_teller, @invalid_attrs)
+
       assert story_teller == Stories.get_story_teller!(story_teller.id)
     end
 

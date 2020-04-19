@@ -17,6 +17,7 @@
       <td><%= story_teller.email %></td>
       <td><%= story_teller.first_name %></td>
       <td><%= story_teller.last_name %></td>
+      <td><%= story_teller.phone_number %></td>
       <td><%= story_teller.comments %></td>
 
       <td>
