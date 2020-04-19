@@ -3,10 +3,11 @@ defmodule Connectuscolumbus.Stories.StoryTeller do
   import Ecto.Changeset
 
   schema "story_tellers" do
-    field :comments, :string
-    field :email, :string
-    field :first_name, :string
-    field :last_name, :string
+    field(:comments, :string)
+    field(:email, :string)
+    field(:first_name, :string)
+    field(:last_name, :string)
+    field(:phone_number, :integer)
 
     timestamps()
   end
