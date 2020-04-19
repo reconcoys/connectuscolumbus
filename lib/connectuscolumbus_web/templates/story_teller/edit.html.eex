@@ -1,0 +1,5 @@
+<h1>Edit Story teller</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.story_teller_path(@conn, :update, @story_teller)) %>
+
+<span><%= link "Back", to: Routes.story_teller_path(@conn, :index) %></span>
