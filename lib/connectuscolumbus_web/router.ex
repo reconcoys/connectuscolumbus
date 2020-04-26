@@ -36,6 +36,7 @@ defmodule ConnectuscolumbusWeb.Router do
   scope "/", ConnectuscolumbusWeb do
     pipe_through([:browser, :protected])
 
+    resources("/story_tellers", StoryTellerController)
     resources("/volunteers", VolunteerController)
   end
 

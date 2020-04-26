@@ -1,0 +1,33 @@
+<h1>Show Story teller</h1>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @story_teller.email %>
+  </li>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @story_teller.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @story_teller.last_name %>
+  </li>
+
+  <li>
+    <strong>Phone Number:</strong>
+    <%= @story_teller.phone_number %>
+  </li>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @story_teller.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.story_teller_path(@conn, :edit, @story_teller) %></span>
+<span><%= link "Back", to: Routes.story_teller_path(@conn, :index) %></span>

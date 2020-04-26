@@ -1,0 +1,33 @@
+<h1>Listing Story tellers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Comments</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for story_teller <- @story_tellers do %>
+    <tr>
+      <td><%= story_teller.email %></td>
+      <td><%= story_teller.first_name %></td>
+      <td><%= story_teller.last_name %></td>
+      <td><%= story_teller.phone_number %></td>
+      <td><%= story_teller.comments %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.story_teller_path(@conn, :show, story_teller) %></span>
+        <span><%= link "Edit", to: Routes.story_teller_path(@conn, :edit, story_teller) %></span>
+        <span><%= link "Delete", to: Routes.story_teller_path(@conn, :delete, story_teller), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Story teller", to: Routes.story_teller_path(@conn, :new) %></span>
