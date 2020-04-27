@@ -1,35 +1,32 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
+<section>
+  <iframe width="861" height="514" src="https://www.youtube.com/embed/NPQ_MIE6y3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p>
+    Know an older person who has an amazing lif story you want your family, your friends, our columbus communtiy or the world to hear?
+    <a href="/story_tellers/new">Nominate them to be a "Connect Us" storyteller</a></p>
+  <p>
+    We invite senior storytellers to reflect on their stories of strength and share them with a volunteer during a series of three video conversations.
+  </p>
+  <p>
+    The stories will be collected, recorded and depending on the senior’s preference shared with family and friends, the Columbus community or preserved forever for history.
+  </p>
+  <p>
+    We get it… quarantine is hard on everyone. Many Columbus seniors who live alone are feeling more isolated than ever before. And, yet they have stories, wisdom, and perspective about the times in their lives that were significant, such as: 
+  </p>
+  <ul style="list-style-type: disc;">
+    <li>Historical events that personally affected them</li>
+    <li>Going to college</li>
+    <li>Starting a new job</li>
+    <li>Retiring from a job</li>
+    <li>Becoming a grandparent</li>
+    <li>Marriage</li>
+    <li>Devorce</li>
+    <li>Death of a spouse or other loved one</li>
+  </ul> 
+  <p>
+    We can't let these stories be lost. Our Seniors need to know their stories matter. And, even if they are socially isolated now, our community cares and needs their perspective in these difficult times.
+  </p>
+  <p>
+    <a href="/volunteers/new">Consider joining us to be a volunteer story collector</a>
+  </p>
 </section>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-    </ul>
-  </article>
-</section>
