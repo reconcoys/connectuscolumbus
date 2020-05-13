@@ -1,5 +1,59 @@
-<h1>New Story teller</h1>
+<div class="container">
+  <h1>Be a ConnectUS Story Teller</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.story_teller_path(@conn, :create)) %>
+  <p>
+    Have you always thought you should record your life story? Have you started many times, but never finished? We can help!
+  </p>
 
-<span><%= link "Back", to: Routes.story_teller_path(@conn, :index) %></span>
+  <p>
+    You may not think you have a story anyone wants to hear, but you do. Can you talkk about something that changed yourlife, shuch as:
+    <ul style="list-style-type: disc; list-style-position: outside;">
+      <li>
+        Historical Events
+      </li>
+      
+      <li>
+        Going to college 
+      </li>
+      <li>
+        Life as a parent 
+      </li>
+      <li>
+        Starting a new job
+      </li>
+      <li>
+        Retiring from a job
+      </li>
+      <li>
+        Becoming a grandparent
+      </li>
+      <li>
+        Marriage 
+      </li>
+      <li>
+        Divorce 
+      </li>
+      <li>
+        Death of a loved one
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    We are asking you to have three conversations with a volunteer story collector.
+  </p>
+
+  <p>
+    <ul style="list-style-type: disc; list-style-position: outside;">
+      <li>
+        The first conversation is a get-to-know-you one that will happen on Zoom. We will send you instructions on where to click and how to be ready for your first call. After the first conversation, we will send you some prompts to help you plan for the second call.
+      </li>
+      <li>
+        The second conversation will be about an hour and will happen on Zoom. During this call, you will share your stories with the volunteer Story Collector. They will ask questions that will help you expand on your stories. Before the third call, you will do some more recollection and refining of your stories and hone the ones you want to share.
+      </li>
+      <li>The final conversation will be about an hour and will be recorded for you to keep and share, as you desire. You could share your stories with your friends, family, or even the entire city!</li>
+    </ul>  
+  </p>
+
+  <%= render "form.html", Map.put(assigns, :action, Routes.story_teller_path(@conn, :create)) %>
+</div>

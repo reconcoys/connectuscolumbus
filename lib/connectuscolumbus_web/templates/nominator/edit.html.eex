@@ -1,0 +1,5 @@
+<h1>Edit Nominator</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.nominator_path(@conn, :update, @nominator)) %>
+
+<span><%= link "Back", to: Routes.nominator_path(@conn, :index) %></span>

@@ -41,6 +41,7 @@ defmodule ConnectuscolumbusWeb do
 
       import ConnectuscolumbusWeb.ErrorHelpers
       import ConnectuscolumbusWeb.Gettext
+      import ConnectuscolumbusWeb.InputHelpers
       alias ConnectuscolumbusWeb.Router.Helpers, as: Routes
     end
   end

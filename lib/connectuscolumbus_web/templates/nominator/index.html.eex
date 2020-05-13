@@ -1,0 +1,30 @@
+<h1>Listing Nominators</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for nominator <- @nominators do %>
+    <tr>
+      <td><%= nominator.name %></td>
+      <td><%= nominator.email %></td>
+      <td><%= nominator.phone %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.nominator_path(@conn, :show, nominator) %></span>
+        <span><%= link "Edit", to: Routes.nominator_path(@conn, :edit, nominator) %></span>
+        <span><%= link "Delete", to: Routes.nominator_path(@conn, :delete, nominator), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Nominator", to: Routes.nominator_path(@conn, :new) %></span>

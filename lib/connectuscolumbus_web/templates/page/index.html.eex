@@ -1,32 +1,26 @@
-<section>
-  <iframe width="861" height="514" src="https://www.youtube.com/embed/NPQ_MIE6y3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <p>
-    Know an older person who has an amazing lif story you want your family, your friends, our columbus communtiy or the world to hear?
-    <a href="/story_tellers/new">Nominate them to be a "Connect Us" storyteller</a></p>
-  <p>
-    We invite senior storytellers to reflect on their stories of strength and share them with a volunteer during a series of three video conversations.
+<div style="width: 90%; height: 100%; display: flex; flex-direction: column;">
+  <p style="padding: 20px; width: 80%; align-self: center;">
+    Everyone has a story to tell — from the mundane to the extraordinary, our lives are shaped by the events in our lives. We invite Columbus seniors to share their stories and become part of a historical narrative that tells the stories of our lives.
   </p>
-  <p>
-    The stories will be collected, recorded and depending on the senior’s preference shared with family and friends, the Columbus community or preserved forever for history.
-  </p>
-  <p>
-    We get it… quarantine is hard on everyone. Many Columbus seniors who live alone are feeling more isolated than ever before. And, yet they have stories, wisdom, and perspective about the times in their lives that were significant, such as: 
-  </p>
-  <ul style="list-style-type: disc;">
-    <li>Historical events that personally affected them</li>
-    <li>Going to college</li>
-    <li>Starting a new job</li>
-    <li>Retiring from a job</li>
-    <li>Becoming a grandparent</li>
-    <li>Marriage</li>
-    <li>Devorce</li>
-    <li>Death of a spouse or other loved one</li>
-  </ul> 
-  <p>
-    We can't let these stories be lost. Our Seniors need to know their stories matter. And, even if they are socially isolated now, our community cares and needs their perspective in these difficult times.
-  </p>
-  <p>
-    <a href="/volunteers/new">Consider joining us to be a volunteer story collector</a>
-  </p>
-</section>
-
+  <div class="home-container" style="display: flex; justify-content: space-around; height: 60vh;">
+    <div class="video-container" style="flex: 0 0 64.435%; max-width: 64.435%;">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/NPQ_MIE6y3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="card-container" style="display: flex; flex-direction: column; justify-content: space-around;">
+      <div class="card" style="height: 45%;">
+        <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center;">
+          <h5 class="card-title">Become a Storyteller</h5>
+          <p class="card-text">Have you overcome adversity in your life? We want to hear about it!</p>
+          <a href="/be-a-connectus-story-teller" class="btn btn-light btn-outline-primary">Tell Your Story</a>
+        </div>
+      </div>
+      <div class="card" style="height: 45%;">
+        <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center;">
+          <h5 class="card-title">Nominate a Senior</h5>
+          <p class="card-text">Do you know a senior who has an incredible story? We want to know more!</p>
+          <a href="/nominate-a-senior" class="btn  btn-light btn-outline-primary">Introduce us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
