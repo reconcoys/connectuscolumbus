@@ -48,7 +48,7 @@ defmodule ConnectuscolumbusWeb.StoryTellerControllerTest do
   describe "new story_teller" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.story_teller_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Story teller"
+      assert html_response(conn, 200) =~ "Be a ConnectUS Story Teller"
     end
   end
 
@@ -66,7 +66,7 @@ defmodule ConnectuscolumbusWeb.StoryTellerControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.story_teller_path(conn, :create), story_teller: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Story teller"
+      assert html_response(conn, 200) =~ "Be a ConnectUS Story Teller"
     end
   end
 

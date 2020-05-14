@@ -34,7 +34,7 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
   describe "new volunteer" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.volunteer_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Volunteer"
+      assert html_response(conn, 200) =~ "Be a Volunteer Story Collector"
     end
   end
 
@@ -51,7 +51,7 @@ defmodule ConnectuscolumbusWeb.VolunteerControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.volunteer_path(conn, :create), volunteer: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Volunteer"
+      assert html_response(conn, 200) =~ "Be a Volunteer Story Collector"
     end
   end
 

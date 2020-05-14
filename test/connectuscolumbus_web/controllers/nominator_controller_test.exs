@@ -30,7 +30,7 @@ defmodule ConnectuscolumbusWeb.NominatorControllerTest do
   describe "new nominator" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.nominator_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Nominator"
+      assert html_response(conn, 200) =~ "Nominate a senior"
     end
   end
 
@@ -47,7 +47,7 @@ defmodule ConnectuscolumbusWeb.NominatorControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.nominator_path(conn, :create), nominator: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Nominator"
+      assert html_response(conn, 200) =~ "Nominate a senior"
     end
   end
 

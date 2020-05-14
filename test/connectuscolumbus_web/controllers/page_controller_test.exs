@@ -3,6 +3,6 @@ defmodule ConnectuscolumbusWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
-    assert html_response(conn, 200) =~ "Welcome to Phoenix!"
+    assert html_response(conn, 200) =~ "Everyone has a story"
   end
 end
