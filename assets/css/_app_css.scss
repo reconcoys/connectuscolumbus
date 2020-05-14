@@ -1,0 +1,57 @@
+html, body {
+  height: 100vh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.logo {
+  width: 100px;
+}
+.bullet-list {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.home-page {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-text {
+  padding: 20px;
+  width: 80%;
+  align-self: center;
+}
+
+.home-content-container {
+  display: flex;
+  justify-content: space-around;
+  height: 60vh;
+}
+
+.home-video-container {
+  flex: 0 0 64.435%;
+  max-width: 64.435%;
+  padding-right: 10px;
+}
+
+.action-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.action-card {
+  height: 45%;
+}
+
+.action-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; 
+}

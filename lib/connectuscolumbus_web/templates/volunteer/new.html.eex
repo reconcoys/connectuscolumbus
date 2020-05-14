@@ -1,11 +1,21 @@
-<h1>Be a Volunteer Story Collector</h1>
-<p>Story Collectors are asked to commit to three Zoom conversations with a Senior Storyteller.
-<ul style="list-style-type: disc; list-style-position: outside;">
-  <li>The first conversation is a shorter, get to know you call with prompts and guidance. Before the second conversation the seniors will be given reflection prompts to remember specific stories in their lives where they have overcome adversity.</li>
-  <li>The second conversation will be a bit longer (60-90 minutes) and enable seniors to really delve into their stories and reflect on the meaning of these stories in their lives (prompts and guidance will be provided to both the Senior Storytellers and the Story Collectors).</li>
-  <li>The third conversation will be video recorded and feature the one or two stories of strength that matter most to the seniors.</li>
-</ul>  
-Story Collectors will be asked to schedule mutually agreeable times with the Senior Storytellers. Story Collectors will be asked to take notes detailing the highlights of the video recordings. If the senior agrees, Story Collectors will be asked to upload the final video to the Columbus Metropolitan Library's oral history archive.
-</p>
-<%= render "form.html", Map.put(assigns, :action, Routes.volunteer_path(@conn, :create)) %>
+<div class="container">
+  <h1>Be a Volunteer Story Collector</h1>
+
+  <p>Story Collectors are asked to commit to three Zoom conversations with a Senior Storyteller.
+    
+  <ul class="bullet-list">
+    <li>
+      The first conversation is a shorter, get to know you call with prompts and guidance. Before the second conversation the seniors will be given reflection prompts to remember specific stories in their lives where they have overcome adversity.
+    </li>
+    <li>
+      The second conversation will be a bit longer (60-90 minutes) and enable seniors to really delve into their stories and reflect on the meaning of these stories in their lives (prompts and guidance will be provided to both the Senior Storytellers and the Story Collectors).
+    </li>
+    <li>
+      The third conversation will be video recorded and feature the one or two stories of strength that matter most to the seniors.
+    </li>
+  </ul>  
+  Story Collectors will be asked to schedule mutually agreeable times with the Senior Storytellers. Story Collectors will be asked to take notes detailing the highlights of the video recordings. If the senior agrees, Story Collectors will be asked to upload the final video to the Columbus Metropolitan Library's oral history archive.
+  </p>
+  <%= render "form.html", Map.put(assigns, :action, Routes.volunteer_path(@conn, :create)) %>
+</div>
 

@@ -7,7 +7,7 @@
 
   <p>
     You may not think you have a story anyone wants to hear, but you do. Can you talkk about something that changed yourlife, shuch as:
-    <ul style="list-style-type: disc; list-style-position: outside;">
+    <ul class="bullet-list">
       <li>
         Historical Events
       </li>
@@ -44,7 +44,7 @@
   </p>
 
   <p>
-    <ul style="list-style-type: disc; list-style-position: outside;">
+    <ul class="bullet-list">
       <li>
         The first conversation is a get-to-know-you one that will happen on Zoom. We will send you instructions on where to click and how to be ready for your first call. After the first conversation, we will send you some prompts to help you plan for the second call.
       </li>

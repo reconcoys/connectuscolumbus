@@ -3,7 +3,7 @@
 
   <p>
     We believe that everyone has a story to tell. Do you know a senior with an incredible story that others need to hear? Can they talk about something that changed their lives, such as:
-    <ul style="list-style-type: disc; list-style-position: outside;">
+    <ul class="bullet-list" style="">
       <li>
         Historical Events
       </li>
@@ -40,7 +40,7 @@
   </p>
 
   <p>
-    <ul style="list-style-type: disc; list-style-position: outside;">
+    <ul class="bullet-list">
       <li>
         The first conversation is a get-to-know-you one that will happen on Zoom. We will send you instructions on where to click and how to be ready for your first call. After the first conversation, we will send you some prompts to help you plan for the second call.
       </li>
