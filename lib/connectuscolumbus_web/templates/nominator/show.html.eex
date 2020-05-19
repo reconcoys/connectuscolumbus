@@ -1,0 +1,23 @@
+<h1>Show Nominator</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @nominator.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @nominator.email %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @nominator.phone %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.nominator_path(@conn, :edit, @nominator) %></span>
+<span><%= link "Back", to: Routes.nominator_path(@conn, :index) %></span>

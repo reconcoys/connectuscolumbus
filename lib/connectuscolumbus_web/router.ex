@@ -31,11 +31,14 @@ defmodule ConnectuscolumbusWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
+    get("/nominate-a-senior", NominatorController, :new)
+    get("/volunteer", VolunteerController, :new)
+    get("/be-a-connectus-story-teller", StoryTellerController, :new)
   end
 
   scope "/", ConnectuscolumbusWeb do
     pipe_through([:browser, :protected])
-
+    resources "/nominators", NominatorController
     resources("/story_tellers", StoryTellerController)
     resources("/volunteers", VolunteerController)
   end

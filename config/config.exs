@@ -28,7 +28,8 @@ config :phoenix, :json_library, Jason
 
 config :connectuscolumbus, :pow,
   user: Connectuscolumbus.Users.User,
-  repo: Connectuscolumbus.Repo
+  repo: Connectuscolumbus.Repo,
+  web_module: ConnectuscolumbusWeb
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

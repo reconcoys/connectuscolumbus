@@ -1,13 +1,9 @@
 <div class="container">
-  <h1>Be a ConnectUS Story Teller</h1>
+  <h1>Nominate a senior</h1>
 
   <p>
-    Have you always thought you should record your life story? Have you started many times, but never finished? We can help!
-  </p>
-
-  <p>
-    You may not think you have a story anyone wants to hear, but you do. Can you talkk about something that changed yourlife, shuch as:
-    <ul class="bullet-list">
+    We believe that everyone has a story to tell. Do you know a senior with an incredible story that others need to hear? Can they talk about something that changed their lives, such as:
+    <ul class="bullet-list" style="">
       <li>
         Historical Events
       </li>
@@ -40,7 +36,7 @@
   </p>
 
   <p>
-    We are asking you to have three conversations with a volunteer story collector.
+    Seniors will be asked to commit to three conversations with a volunteer story collector.
   </p>
 
   <p>
@@ -55,5 +51,7 @@
     </ul>  
   </p>
 
-  <%= render "form.html", Map.put(assigns, :action, Routes.story_teller_path(@conn, :create)) %>
+
+  <%= render "form.html", Map.put(assigns, :action, Routes.nominator_path(@conn, :create)) %>
 </div>
+

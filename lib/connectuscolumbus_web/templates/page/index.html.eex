@@ -1,35 +1,26 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
-</section>
-
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-    </ul>
-  </article>
-</section>
+<div class="home-page">
+  <p class="intro-text">
+    Everyone has a story to tell — from the mundane to the extraordinary, our lives are shaped by the events in our lives. We invite Columbus seniors to share their stories and become part of a historical narrative that tells the stories of our lives.
+  </p>
+  <div class="home-content-container">
+    <div class="home-video-container">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/NPQ_MIE6y3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="card-container action-card-container">
+      <div class="card action-card">
+        <div class="card-body action-card-body">
+          <h5 class="card-title text-primary">Become a Storyteller</h5>
+          <p class="card-text">Have you overcome adversity in your life? We want to hear about it!</p>
+          <a href="/be-a-connectus-story-teller" class="btn btn-light btn-outline-primary">Tell Your Story</a>
+        </div>
+      </div>
+      <div class="card action-card">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Nominate a Senior</h5>
+          <p class="card-text">Do you know a senior who has an incredible story? We want to know more!</p>
+          <a href="/nominate-a-senior" class="btn  btn-light btn-outline-primary">Introduce us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,11 +5,11 @@
     </div>
   <% end %>
 
-  <%= input f, :first_name %>
-
-  <%= input f, :last_name %>
+  <%= input f, :name %>
 
   <%= input f, :email %>
+
+  <%= input f, :phone %>
 
   <div>
     <%= submit "Save" %>
