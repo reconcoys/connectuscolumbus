@@ -1,3 +1,4 @@
+<%= breadcrumbs [@conn, :root] %>
 <div class="home-page">
   <p class="intro-text">
     Everyone has a story to tell — from the mundane to the extraordinary, our lives are shaped by the events in our lives. We invite Columbus seniors to share their stories and become part of a historical narrative that tells the stories of our lives.

@@ -19,11 +19,6 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarToggler">
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="<%= Routes.static_path(@conn, "/") %>">Home</a>
-              <a class="nav-item nav-link" href="<%= Routes.static_path(@conn, "/nominate-a-senior") %>">Nominate a Senior!</a>
-              <a class="nav-item nav-link" href="<%= Routes.static_path(@conn, "/be-a-connectus-story-teller") %>">Tell Your Story!</a>
-            </div>
-            <div class="navbar-nav">
               <%= if Pow.Plug.current_user(@conn) do %>
                 <a class="nav-item nav-link" href="<%= Routes.pow_session_path(@conn, :delete) %>">Sign out</a>
               <% else %>

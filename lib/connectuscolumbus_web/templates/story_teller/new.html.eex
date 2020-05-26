@@ -1,3 +1,4 @@
+<%= breadcrumbs [@conn, :tell_story] %>
 <div class="container">
   <h1>Be a ConnectUS Story Teller</h1>
 
