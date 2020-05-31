@@ -40,4 +40,8 @@ defmodule ConnectuscolumbusWeb.BreadcrumbsHelpers do
   def crumbs(conn, :nominate) do
     [{gettext("Nominate a senior"), "/nominate-a-senior"} | crumbs(conn, :root)]
   end
+
+  def crumbs(conn, :volunteer) do
+    [{gettext("Volunteer"), "/be-a-volunteer-story-collector"} | crumbs(conn, :root)]
+  end
 end

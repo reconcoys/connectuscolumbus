@@ -32,7 +32,7 @@ defmodule ConnectuscolumbusWeb.Router do
 
     get("/", PageController, :index)
     get("/nominate-a-senior", NominatorController, :new)
-    get("/volunteer", VolunteerController, :new)
+    get("/be-a-volunteer-story-collector", VolunteerController, :new)
     get("/be-a-connectus-story-teller", StoryTellerController, :new)
   end
 
