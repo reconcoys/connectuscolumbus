@@ -15,12 +15,20 @@
         </div>
       </div>
       <div class="card action-card">
-        <div class="card-body">
+        <div class="card-body action-card-body">
           <h5 class="card-title text-primary">Nominate a Senior</h5>
           <p class="card-text">Do you know a senior who has an incredible story? We want to know more!</p>
           <a href="/nominate-a-senior" class="btn  btn-light btn-outline-primary">Introduce us</a>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="partners">
+    <h4>Partnership with:</h4>
+    <div class="d-flex justify-content-around">
+      <img src="<%= Routes.static_path(@conn, "/images/columbus-foundation.jpeg") %>" class="img-fluid" alt="Columbus Foundation">
+      <img src="<%= Routes.static_path(@conn, "/images/cscbus_logo_square.jpg") %>" class="img-fluid" alt="Cant Stop Columbus">
+      <img src="<%= Routes.static_path(@conn, "/images/CML_Logo_Stacked_Color.png") %>" class="img-fluid" alt="Columbus Library">
     </div>
   </div>
 </div>

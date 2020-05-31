@@ -3,3 +3,9 @@
 @import "custom_sass_variables";
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import "app_css";
+
+// Font awesome install
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";

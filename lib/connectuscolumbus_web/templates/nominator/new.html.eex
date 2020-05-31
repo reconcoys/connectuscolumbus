@@ -1,3 +1,4 @@
+<%= breadcrumbs [@conn, :nominate] %>
 <div class="container">
   <h1>Nominate a senior</h1>
 

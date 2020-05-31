@@ -1,3 +1,4 @@
+<%= breadcrumbs [@conn, :volunteer] %>
 <div class="container">
   <h1>Be a Volunteer Story Collector</h1>
 

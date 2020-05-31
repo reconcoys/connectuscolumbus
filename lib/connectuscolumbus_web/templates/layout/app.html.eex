@@ -19,11 +19,6 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarToggler">
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="<%= Routes.static_path(@conn, "/") %>">Home</a>
-              <a class="nav-item nav-link" href="<%= Routes.static_path(@conn, "/nominate-a-senior") %>">Nominate a Senior!</a>
-              <a class="nav-item nav-link" href="<%= Routes.static_path(@conn, "/be-a-connectus-story-teller") %>">Tell Your Story!</a>
-            </div>
-            <div class="navbar-nav">
               <%= if Pow.Plug.current_user(@conn) do %>
                 <a class="nav-item nav-link" href="<%= Routes.pow_session_path(@conn, :delete) %>">Sign out</a>
               <% else %>
@@ -43,6 +38,27 @@
       <% end %>
       <%= render @view_module, @view_template, assigns %>
     </div>
+   <!-- Footer -->
+  <footer class="page-footer border-top font-small d-inline-flex justify-content-center w-100">
+    <!-- Copyright -->
+    <div class="footer-copyright py-3">© 2020 Copyright:
+      <a href="https://connectuscolumbus.com/">ConnectUS: Stories of Strength -- All rights reserved</a>
+      <div class="social-media d-inline-flex">
+        <!-- Facebook -->
+        <a class="fb-ic">
+          <div><i class="fab fa-facebook fa-lg mr-md-1 mr-3 fa-2x"> </i>Facebook</div>
+        </a>
+        <!-- Twitter -->
+        <a class="tw-ic">
+          <i class="fab fa-twitter fa-lg mr-md-1 mr-3 fa-2x"> </i>
+          <span>Twitter</span>
+        </a>
+      </div>
+    </div>
+    <!-- Copyright -->
+    
+  </footer>
+<!-- Footer -->
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
