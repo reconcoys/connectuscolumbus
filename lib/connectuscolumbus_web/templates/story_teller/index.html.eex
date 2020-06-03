@@ -18,6 +18,8 @@
       <td><%= story_teller.first_name %></td>
       <td><%= story_teller.last_name %></td>
       <td><%= story_teller.phone_number %></td>
+      <td><%= story_teller.nominator %></td>
+      <td><%= story_teller.volunteer %></td>
       <td><%= story_teller.comments %></td>
 
       <td>

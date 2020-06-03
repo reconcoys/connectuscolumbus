@@ -18,7 +18,7 @@ defmodule Connectuscolumbus.Stories do
 
   """
   def list_story_tellers do
-    Repo.all(StoryTeller)
+    Repo.all(StoryTeller) |> Repo.preload([:volunteer, :nominator])
   end
 
   @doc """

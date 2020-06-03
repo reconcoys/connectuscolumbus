@@ -9,6 +9,8 @@ defmodule Connectuscolumbus.Stories.StoryTeller do
     field(:last_name, :string)
     field(:phone_number, :integer)
 
+    belongs_to :volunteer, Conectuscolumbus.Accounts.Volunteer
+    belongs_to :nominator, Connectuscolumbus.Nominations.Nominator
     timestamps()
   end
 
