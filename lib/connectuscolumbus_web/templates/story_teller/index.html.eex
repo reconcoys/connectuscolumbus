@@ -1,11 +1,15 @@
 <h1>Listing Story tellers</h1>
 
-<table>
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
       <th>Email</th>
       <th>First name</th>
       <th>Last name</th>
+      <th>Phone Number</th>
+      <th>Nominator</th>
+      <th>Preferred Contact</th>
+      <th>Volunteer</th>
       <th>Comments</th>
 
       <th></th>
@@ -17,9 +21,24 @@
       <td><%= story_teller.email %></td>
       <td><%= story_teller.first_name %></td>
       <td><%= story_teller.last_name %></td>
-      <td><%= story_teller.phone_number %></td>
-      <td><%= story_teller.nominator %></td>
-      <td><%= story_teller.volunteer %></td>
+      <td><%= Number.Phone.number_to_phone(story_teller.phone_number) %></td>
+      <td><%= story_teller.nominator || "None" %></td>
+      <%= if story_teller.volunteer do %> 
+        <td><%= story_teller.volunteer %></td>
+      <%= else %>
+        <td>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= story_teller.volunteer || "Assign Volunteer" %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <%= for volunteer <- @volunteers do %>
+            <% class = if (story_teller.volunteer && volunteer.id == story_teller.volunteer.id), do: "dropdown-item active", else: "dropdown-item" %>
+            <%= link "#{volunteer.first_name} #{volunteer.last_name}", class: class, to: Routes.story_teller_path(@conn, :assign_volunteer, story_teller, volunteer) %>
+          <% end %>
+            </div>
+          </div>
+      <% end %>
       <td><%= story_teller.comments %></td>
 
       <td>
