@@ -7,6 +7,7 @@ defmodule Connectuscolumbus.Accounts do
   alias Connectuscolumbus.Repo
 
   alias Connectuscolumbus.Accounts.Volunteer
+  alias Connectuscolumbus.Stories.StoryTeller
 
   @doc """
   Returns the list of volunteers.

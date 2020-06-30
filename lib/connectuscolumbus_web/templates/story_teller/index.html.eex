@@ -3,10 +3,9 @@
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
-      <th>Email</th>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Name</th>
       <th>Phone Number</th>
+      <th>Email</th>
       <th>Nominator</th>
       <th>Preferred Contact</th>
       <th>Volunteer</th>
@@ -18,27 +17,27 @@
   <tbody>
 <%= for story_teller <- @story_tellers do %>
     <tr>
-      <td><%= story_teller.email %></td>
-      <td><%= story_teller.first_name %></td>
-      <td><%= story_teller.last_name %></td>
+      <td><%= "#{story_teller.first_name} #{story_teller.last_name}" %></td>
       <td><%= Number.Phone.number_to_phone(story_teller.phone_number) %></td>
+      <td><%= story_teller.email %></td>
       <td><%= story_teller.nominator || "None" %></td>
-      <%= if story_teller.volunteer do %> 
-        <td><%= story_teller.volunteer %></td>
-      <%= else %>
-        <td>
-          <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= story_teller.volunteer || "Assign Volunteer" %>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <%= for volunteer <- @volunteers do %>
-            <% class = if (story_teller.volunteer && volunteer.id == story_teller.volunteer.id), do: "dropdown-item active", else: "dropdown-item" %>
-            <%= link "#{volunteer.first_name} #{volunteer.last_name}", class: class, to: Routes.story_teller_path(@conn, :assign_volunteer, story_teller, volunteer) %>
+      <td><%= story_teller.preferred_contact || "None" %></td>
+      <td>
+        <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= if story_teller.volunteer do %> 
+            <%= "#{story_teller.volunteer.first_name} #{story_teller.volunteer.last_name}" %>
+          <% else %>
+            Assign Volunteer
           <% end %>
-            </div>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <%= for volunteer <- @volunteers do %>
+          <% class = if (story_teller.volunteer && volunteer.id == story_teller.volunteer.id), do: "dropdown-item active", else: "dropdown-item" %>
+          <%= link "#{volunteer.first_name} #{volunteer.last_name}", class: class, to: Routes.story_teller_path(@conn, :assign_volunteer, id: story_teller.id, volunteer_id: volunteer.id), method: :post %>
+        <% end %>
           </div>
-      <% end %>
+        </div>
       <td><%= story_teller.comments %></td>
 
       <td>

@@ -38,9 +38,15 @@ defmodule ConnectuscolumbusWeb.Router do
 
   scope "/", ConnectuscolumbusWeb do
     pipe_through([:browser, :protected])
-    resources "/nominators", NominatorController
+    resources("/nominators", NominatorController)
     resources("/story_tellers", StoryTellerController)
     resources("/volunteers", VolunteerController)
+  end
+
+  scope "/api", ConnectuscolumbusWeb do
+    pipe_through([:api, :protected])
+
+    post("/assign_volunteer", StoryTellerController, :assign_volunteer)
   end
 
   # Other scopes may use custom stacks.
