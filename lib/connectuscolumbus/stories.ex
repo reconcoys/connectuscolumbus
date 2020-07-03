@@ -7,7 +7,6 @@ defmodule Connectuscolumbus.Stories do
   alias Connectuscolumbus.Repo
 
   alias Connectuscolumbus.Stories.StoryTeller
-  alias Connectuscolumbus.Accounts
 
   @doc """
   Returns the list of story_tellers.
@@ -36,7 +35,9 @@ defmodule Connectuscolumbus.Stories do
       ** (Ecto.NoResultsError)
 
   """
-  def get_story_teller!(id), do: Repo.get!(StoryTeller, id)
+  def get_story_teller!(id) do
+    Repo.get!(StoryTeller, id) |> Repo.preload([:volunteer, :nominator])
+  end
 
   @doc """
   Creates a story_teller.
@@ -52,6 +53,7 @@ defmodule Connectuscolumbus.Stories do
   """
   def create_story_teller(attrs \\ %{}) do
     %StoryTeller{}
+    |> Repo.preload([:volunteer, :nominator])
     |> StoryTeller.changeset(attrs)
     |> Repo.insert()
   end
