@@ -45,7 +45,8 @@ defmodule Connectuscolumbus.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:pow, "~> 1.0.19"},
       {:faker_elixir_octopus, "~> 1.0.0", only: [:dev, :test]},
-      {:number, "~> 1.0.1"}
+      {:number, "~> 1.0.1"},
+      {:bamboo, "~> 1.5"}
     ]
   end
 
