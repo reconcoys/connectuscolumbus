@@ -6,6 +6,7 @@ defmodule Connectuscolumbus.Nominations.Nominator do
     field :email, :string
     field :name, :string
     field :phone, :integer
+    has_many :story_tellers, Connectuscolumbus.Stories.StoryTeller
 
     timestamps()
   end

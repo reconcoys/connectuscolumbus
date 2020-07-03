@@ -6,6 +6,7 @@ defmodule Connectuscolumbus.Accounts.Volunteer do
     field :email, :string
     field :first_name, :string
     field :last_name, :string
+    has_many :story_tellers, Connectuscolumbus.Stories.StoryTeller
 
     timestamps()
   end

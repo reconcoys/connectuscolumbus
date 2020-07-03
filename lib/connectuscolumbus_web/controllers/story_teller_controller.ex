@@ -3,10 +3,13 @@ defmodule ConnectuscolumbusWeb.StoryTellerController do
 
   alias Connectuscolumbus.Stories
   alias Connectuscolumbus.Stories.StoryTeller
+  alias Connectuscolumbus.Accounts
+  alias Connectuscolumbus.Accounts.Volunteer
 
   def index(conn, _params) do
     story_tellers = Stories.list_story_tellers()
-    render(conn, "index.html", story_tellers: story_tellers)
+    volunteers = Accounts.list_volunteers()
+    render(conn, "index.html", story_tellers: story_tellers, volunteers: volunteers)
   end
 
   def new(conn, _params) do
@@ -58,5 +61,22 @@ defmodule ConnectuscolumbusWeb.StoryTellerController do
     conn
     |> put_flash(:info, "Story teller deleted successfully.")
     |> redirect(to: Routes.story_teller_path(conn, :index))
+  end
+
+  def assign_volunteer(conn, %{"id" => id, "volunteer_id" => volunteer_id}) do
+    story_teller = Stories.get_story_teller!(id)
+    story_teller_params = %{volunteer_id: volunteer_id}
+
+    case Stories.update_story_teller(
+           story_teller,
+           story_teller_params
+         ) do
+      {:ok, _story_teller} ->
+        conn
+        |> redirect(to: Routes.story_teller_path(conn, :index))
+
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "edit.html", story_teller: story_teller, changeset: changeset)
+    end
   end
 end
