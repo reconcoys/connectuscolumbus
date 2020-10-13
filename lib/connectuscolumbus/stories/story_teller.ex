@@ -17,8 +17,6 @@ defmodule Connectuscolumbus.Stories.StoryTeller do
 
   @doc false
   def changeset(story_teller, attrs) do
-    inspect(attrs)
-
     story_teller
     |> cast(attrs, [
       :email,

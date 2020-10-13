@@ -34,6 +34,7 @@ defmodule ConnectuscolumbusWeb.Router do
     get("/nominate-a-senior", NominatorController, :new)
     get("/be-a-volunteer-story-collector", VolunteerController, :new)
     get("/be-a-connectus-story-teller", StoryTellerController, :new)
+    resources("/story_tellers", StoryTellerController, only: [:create])
   end
 
   scope "/", ConnectuscolumbusWeb do
@@ -47,6 +48,10 @@ defmodule ConnectuscolumbusWeb.Router do
     pipe_through([:api, :protected])
 
     post("/assign_volunteer", StoryTellerController, :assign_volunteer)
+  end
+
+  if Mix.env() == :dev do
+    forward("/sent_emails", Bamboo.SentEmailViewerPlug)
   end
 
   # Other scopes may use custom stacks.

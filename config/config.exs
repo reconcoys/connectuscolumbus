@@ -31,9 +31,9 @@ config :connectuscolumbus, :pow,
   repo: Connectuscolumbus.Repo,
   web_module: ConnectuscolumbusWeb
 
-config :stories, Stories.Mailer,
+config :connectuscolumbus, Connectuscolumbus.Mailer,
   adapter: Bamboo.SendGridAdapter,
-  api_key: "need"
+  api_key: "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"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

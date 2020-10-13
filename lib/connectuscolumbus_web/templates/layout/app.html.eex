@@ -22,7 +22,6 @@
               <%= if Pow.Plug.current_user(@conn) do %>
                 <a class="nav-item nav-link" href="<%= Routes.pow_session_path(@conn, :delete) %>">Sign out</a>
               <% else %>
-                <a class="nav-item nav-link" href="<%= Routes.pow_registration_path(@conn, :new) %>">Register</a>
                 <a class="nav-item nav-link" href="<%= Routes.pow_session_path(@conn, :new) %>">Sign in</a>
               <% end %>
             </div>

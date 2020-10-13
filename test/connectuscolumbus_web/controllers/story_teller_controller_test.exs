@@ -6,21 +6,21 @@ defmodule ConnectuscolumbusWeb.StoryTellerControllerTest do
 
   @create_attrs %{
     comments: "some comments",
-    email: "some email",
+    email: "some@email.com",
     first_name: "some first_name",
     last_name: "some last_name",
     phone_number: 555_555_5555
   }
   @update_attrs %{
     comments: "some updated comments",
-    email: "some updated email",
+    email: "some@updated.email",
     first_name: "some updated first_name",
     last_name: "some updated last_name",
     phone_number: 555_555_5555
   }
   @invalid_attrs %{
     comments: nil,
-    email: nil,
+    email: "some@email.com",
     first_name: nil,
     last_name: nil,
     phone_number: 555_555_5555

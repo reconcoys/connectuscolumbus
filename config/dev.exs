@@ -74,3 +74,6 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# config mailer for local testing
+config :connectuscolumbus, Connectuscolumbus.Mailer, adapter: Bamboo.LocalAdapter

@@ -16,3 +16,6 @@ config :connectuscolumbus, ConnectuscolumbusWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Mailer test adapter
+config :connectuscolumbus, Connectuscolumbus.Mailer, adapter: Bamboo.TestAdapter

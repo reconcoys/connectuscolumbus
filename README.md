@@ -19,8 +19,13 @@ To start your Phoenix server:
   * Create a postgres docker container with `docker container run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -v connectuscolumbus-postgres:/var/lib/postgresql/data --rm postgres:11-alpine`
   * Create your database with `mix ecto.create`
   * Run migrations with `mix ecto.migrate`
+  * Seed data with `mix run priv/repo/seeds.exs`
   * Install Node.js dependencies with `cd assets && npm install`
   * Start Phoenix endpoint with `mix phx.server`
+
+Library Documetation:
+ * Authentication: Pow: https://powauth.com/
+ * Mailer: Bamboo and SendGrid: https://github.com/thoughtbot/bamboo (in local visit `http://localhost:4000/sent_emails` to see sent emails)
 
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.

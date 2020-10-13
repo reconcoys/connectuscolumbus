@@ -1,10 +1,9 @@
 defmodule ConnectuscolumbusWeb.StoryTellerController do
   use ConnectuscolumbusWeb, :controller
+  require Logger
 
-  alias Connectuscolumbus.Stories
+  alias Connectuscolumbus.{Mailer, Email, Accounts, Stories}
   alias Connectuscolumbus.Stories.StoryTeller
-  alias Connectuscolumbus.Accounts
-  alias Connectuscolumbus.Accounts.Volunteer
 
   def index(conn, _params) do
     story_tellers = Stories.list_story_tellers()
@@ -20,12 +19,18 @@ defmodule ConnectuscolumbusWeb.StoryTellerController do
   def create(conn, %{"story_teller" => story_teller_params}) do
     case Stories.create_story_teller(story_teller_params) do
       {:ok, story_teller} ->
+        Email.welcome_story_teller(story_teller) |> Mailer.deliver_now()
+
         conn
         |> put_flash(:info, "Story teller created successfully.")
-        |> redirect(to: Routes.story_teller_path(conn, :show, story_teller))
+        |> redirect(to: Routes.page_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        Logger.debug("debugging #{inspect(changeset)}")
+
+        conn
+        |> put_flash(:info, "There was a problem creating your entry")
+        |> redirect(to: Routes.page_path(conn, :index))
     end
   end
 
